@@ -1,5 +1,7 @@
 import React from "react";
 
+//HEY HEY HEY
+
 const GameCard = () => (
   <div className="ui card">
     <div className="image">
