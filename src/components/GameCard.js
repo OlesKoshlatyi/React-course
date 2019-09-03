@@ -1,8 +1,10 @@
 import React from "react";
 import Price from "./Price";
 import Featured from "./Featured";
+import HintBtn from "./HintBtn";
+import Hint from "./Hint";
 
-const GameCard = ({ game, toggleFeatured }) => (
+const GameCard = ({ game, toggleFeatured, showHint }) => (
   <div className="ui card">
     <div className="image">
       <span className="ui green ribon label">
@@ -13,10 +15,7 @@ const GameCard = ({ game, toggleFeatured }) => (
         toggleFeatured={toggleFeatured}
         gameID={game.id}
       />
-      <img
-        src="https://www.hearthstonetopdecks.com/wp-content/uploads/2018/03/baku-the-mooneater-hd-300x429.png"
-        alt="Game Cover"
-      />
+      {game.visible ? <Hint /> : <img src={game.img} alt="Game Cover" />}
     </div>
     <div className="content">
       <a className="header">{game.name}</a>
@@ -25,6 +24,7 @@ const GameCard = ({ game, toggleFeatured }) => (
         {game.players}
         <i className="icon wait" /> {game.time}
       </div>
+      <HintBtn gameID={game.id} showHint={showHint} />
     </div>
   </div>
 );

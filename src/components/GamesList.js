@@ -8,13 +8,18 @@ const info = {
   type: "icon warning"
 };
 
-const GamesList = ({ data, toggleFeatured }) => (
+const GamesList = ({ data, toggleFeatured, showHint }) => (
   <div className="ui five cards">
     {data.length === 0 ? (
       <InfoMsg source={info} />
     ) : (
       data.map(i => (
-        <GameCard game={i} key={i.id} toggleFeatured={toggleFeatured} />
+        <GameCard
+          game={i}
+          key={i.id}
+          toggleFeatured={toggleFeatured}
+          showHint={showHint}
+        />
       ))
     )}
   </div>
