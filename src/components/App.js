@@ -1,5 +1,6 @@
 import React from "react";
 import GamesList from "./GamesList";
+import GameForm from "./GameForm";
 
 const games = [
   {
@@ -76,6 +77,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="ui containter">
+        <GameForm />
+        <br />
         <GamesList
           data={this.state.games}
           toggleFeatured={this.toggleFeatured}
